@@ -1,4 +1,4 @@
-package test.rest;
+package azure.rest;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -12,8 +12,15 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @Log4j2
 public class Controller {
+
 	@GetMapping(path="/test", produces = "application/json")
-	Message test() {
+	public Message test() {
+		log.trace("A TRACE Message");
+		log.debug("A DEBUG Message");
+		log.info("An INFO Message");
+		log.warn("A WARN Message");
+		log.error("An ERROR Message");
+        
 		LocalDateTime start = LocalDateTime.now();
 		log.info("Request received - {}", start);
 		Message response = new Message("Hellow world");

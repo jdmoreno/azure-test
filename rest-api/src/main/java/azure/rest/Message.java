@@ -1,4 +1,4 @@
-package test.rest;
+package azure.rest;
 
 import java.time.LocalDateTime;
 
