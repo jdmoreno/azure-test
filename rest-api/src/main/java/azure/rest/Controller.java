@@ -15,12 +15,6 @@ public class Controller {
 
 	@GetMapping(path="/test", produces = "application/json")
 	public Message test() {
-		log.trace("A TRACE Message");
-		log.debug("A DEBUG Message");
-		log.info("An INFO Message");
-		log.warn("A WARN Message");
-		log.error("An ERROR Message");
-        
 		LocalDateTime start = LocalDateTime.now();
 		log.info("Request received - {}", start);
 		Message response = new Message("Hellow world");
@@ -29,6 +23,7 @@ public class Controller {
 		} catch (InterruptedException e) {
 			//just ignore
 		}
+		log.info("Response - {}", response);
 		LocalDateTime end = LocalDateTime.now();
 		log.info("Request end - {} -  elapsed time {} ms", end, DurationFormatUtils.formatDuration(Duration.between(start, end).toMillis(), "s.S"));
 		return response;

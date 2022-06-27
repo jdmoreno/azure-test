@@ -26,7 +26,7 @@
     <Loggers>
         <Logger name="org.springframework.boot" level="info" additivity="false">
             <AppenderRef ref="toConsole" />        
-            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="toRollingFile"/>
         </Logger>
     
         <!-- LOG everything at INFO level -->
